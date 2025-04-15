@@ -7,7 +7,7 @@ app.use(express.json());
 
 // Simple route that returns a message
 app.get('/', (req, res) => {
-  res.json({ message: 'Hello from the backend!' });
+  res.json({ message: 'Hello from the backend!!!' });
 });
 
 // POST route that accepts data
