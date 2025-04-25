@@ -4,8 +4,7 @@ const express = require("express");
 const mysql = require("mysql2");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-const PORT_SERVER = process.env.PORT_SERVER || 3000;
+const PORT = process.env.PORT || 3000;
 
 console.log({
     host: process.env.DB_HOST,
@@ -81,6 +80,6 @@ app.put("/word/:id", (req, res) => {
 });
 
 // הפעלת השרת
-app.listen(PORT_SERVER, () => {
-  console.log(`Server running on http://localhost:${PORT_SERVER}`);
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
