@@ -44,7 +44,11 @@ app.get("/words/:count", (req, res) => {
 where
 not exists (SELECT id FROM word_to_learn WHERE word_id = words.id)
 AND
-NOT EXISTS (SELECT id FROM word_not_need_to_learn WHERE word_id = words.id)LIMIT ?`;
+NOT EXISTS (SELECT id FROM word_not_need_to_learn WHERE word_id = words.id)
+AND level = 3000
+ORDER BY id
+LIMIT ?
+`;
   db.query(query, [count], (err, results) => {
     if (err) {
       return res.status(500).json({ error: "Database query failed" });
