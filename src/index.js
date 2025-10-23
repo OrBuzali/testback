@@ -46,6 +46,7 @@ not exists (SELECT id FROM word_to_learn WHERE word_id = words.id)
 AND
 NOT EXISTS (SELECT id FROM word_not_need_to_learn WHERE word_id = words.id)
 AND level = 3000
+AND he != '-'
 ORDER BY id
 LIMIT ?
 `;
